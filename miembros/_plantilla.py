@@ -4,7 +4,9 @@
 #
 # Reglas para el nombre del archivo:
 #   - en minúsculas, sin espacios, sin tildes ni ñ (ana.py, jon.py, maria.py)
+#
+# Este es tu luchador. Solo tienes que cambiar los valores de abajo.
 
-
-def saludo():
-    return "Hola, soy TU_NOMBRE y esto lo he escrito yo."
+NOMBRE = "TU_NOMBRE"   # cómo se llama tu luchador (puedes inventarte un apodo)
+VIDA = 20              # cuántos golpes aguanta (máximo 30)
+ATAQUE = 5             # lo fuerte que pega (máximo 8)
