@@ -11,7 +11,7 @@ En Windows, todo desde la terminal de **WSL** y dentro de `~/` (nunca en `/mnt/c
 
 ---
 
-## Ronda 0: Preparar el equipo (5 min)
+## Ronda 0: Preparar el equipo (15 min)
 
 Un solo miembro del grupo hace de **responsable**. El resto espera al paso 5.
 
@@ -19,7 +19,7 @@ Un solo miembro del grupo hace de **responsable**. El resto espera al paso 5.
 
 1. Clona este repositorio:
    ```
-   git clone git@github.com:ORGANIZACION/ejercicios-equipo.git
+   git clone git@github.com:skillIssu3/ejercicios-equipo.git
    cd ejercicios-equipo
    ```
 2. En la web de GitHub, crea un repositorio **vacío** y **sin README** en tu cuenta, llamado `ejercicios-equipo`.
