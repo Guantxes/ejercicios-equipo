@@ -1,0 +1,3 @@
+# Python genera estas carpetas al ejecutar. No se suben a Git.
+__pycache__/
+*.pyc
