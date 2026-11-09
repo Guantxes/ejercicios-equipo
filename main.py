@@ -20,13 +20,24 @@ def cargar_luchadores():
     for info in sorted(pkgutil.iter_modules(miembros.__path__), key=lambda i: i.name):
         if info.name.startswith("_"):
             continue
-        modulo = importlib.import_module(f"miembros.{info.name}")
-        luchadores.append({
-            "nombre": modulo.NOMBRE,
-            "vida": min(modulo.VIDA, config.MAX_VIDA),
-            "ataque": min(modulo.ATAQUE, config.MAX_ATAQUE),
-            "grito": getattr(modulo, "GRITO", None),  # Ronda 3
-        })
+        try:
+            modulo = importlib.import_module(f"miembros.{info.name}")
+            luchador = {
+                "nombre": str(modulo.NOMBRE),
+                "vida": min(int(modulo.VIDA), config.MAX_VIDA),
+                "ataque": min(int(modulo.ATAQUE), config.MAX_ATAQUE),
+                "grito": getattr(modulo, "GRITO", None),  # Ronda 2
+            }
+        except Exception as error:
+            # Un archivo roto no debe tumbar a todo el equipo: se ignora y se avisa.
+            print(f"⚠ miembros/{info.name}.py tiene un error y se ignora: "
+                  f"{type(error).__name__}: {error}")
+            print("  Ábrelo, revísalo (¿falta NOMBRE, VIDA o ATAQUE? ¿comillas sin cerrar?) y vuelve a probar.")
+            continue
+        if luchador["vida"] < 1 or luchador["ataque"] < 1:
+            print(f"⚠ miembros/{info.name}.py: VIDA y ATAQUE deben ser al menos 1. Se ignora.")
+            continue
+        luchadores.append(luchador)
     return luchadores
 
 
