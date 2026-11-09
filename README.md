@@ -127,6 +127,22 @@ Hasta ahora todos habéis trabajado directamente sobre `main`. En equipos reales
 
 ---
 
+## Ronda 3: el torneo (al final de la charla)
+
+Cuando os lo indiquen, vuestro luchador se apunta al torneo de **todos los equipos**: https://github.com/skillIssu3/torneo-luchadores
+
+Las instrucciones (fork, rama y Pull Request) están en el README de ese repositorio. Antes de empezar, ten al día este repo, porque de aquí copiarás tu luchador a `luchadores/tuusuario.py`:
+
+```
+git checkout main
+git fetch
+git merge origin/main
+```
+
+Los dos repositorios tienen que estar en la misma carpeta (por ejemplo `~/git`).
+
+---
+
 ## Si algo sale mal
 
 | Comando | Para qué sirve |
