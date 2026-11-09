@@ -160,4 +160,5 @@ Los dos repositorios tienen que estar en la misma carpeta (por ejemplo `~/git`).
 - `Repository not found` al clonar el repo de tu responsable: todavía no has aceptado su invitación.
 - `CONFLICT ... Automatic merge failed`: Git no sabe cuál de dos cambios en la misma línea elegir. Abre el archivo en VS Code, deja solo la versión buena (botones *Accept...*), y luego `git add`, `git commit`, `git push`. Si te agobias: `git merge --abort`.
 - `Need to specify how to reconcile divergent branches`: has usado `git pull`. En esta práctica usamos `git fetch` y luego `git merge origin/main`.
+- `cannot run less: No such file or directory` o `unable to execute pager 'less'`: tu sistema no tiene el programa `less`, que Git usa para paginar. Ejecuta una vez `git config --global core.pager cat` y repite el comando.
 - `remote: Permission to ... denied`: estás intentando subir al repo de la organización en vez del de tu responsable. Revisa `git remote -v`.
