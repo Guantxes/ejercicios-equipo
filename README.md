@@ -39,15 +39,7 @@ Un solo miembro del grupo hace de **responsable**. El resto espera al paso 5.
    cd ejercicios-equipo
    ```
 
-**Todos**, una sola vez en vuestra máquina:
-
-```
-git config --global pull.rebase false
-```
-
-(Le dice a Git cómo juntar cambios cuando hacéis `git pull`. Sin esto, Git se queja en la Ronda 1.)
-
-Abrid el proyecto en VS Code con `code .` y comprobad que funciona:
+**Todos:** abrid el proyecto en VS Code con `code .` y comprobad que funciona:
 
 ```
 python3 main.py
@@ -83,15 +75,17 @@ Vais a añadir cada uno **vuestro propio luchador**, en su archivo. Como nadie t
 
 No es un error grave: el repositorio remoto tiene commits que tú no tienes. Hay que traerlos primero.
 
-5. Descarga lo de tus compañeros y vuelve a subir:
+5. Descarga lo de tus compañeros, júntalo con lo tuyo y vuelve a subir:
    ```
-   git pull
+   git fetch
+   git merge origin/main
    git push
    ```
+   `git fetch` solo descarga lo nuevo y no toca tus archivos; `git merge origin/main` lo junta con lo tuyo.
    Si se abre un editor pidiendo un mensaje de merge, guarda y cierra (en nano: `Ctrl+O`, `Enter`, `Ctrl+X`).
 6. Ejecuta `python3 main.py`. ¡Deberían pelear todos los luchadores del equipo!
 
-**Para pensar:** ¿por qué `git pull` no dio conflicto? (Pista: mirad `git log --oneline --graph`.)
+**Para pensar:** ¿por qué el `git merge` no dio conflicto? (Pista: mirad `git log --oneline --graph`.)
 
 ---
 
@@ -99,7 +93,11 @@ No es un error grave: el repositorio remoto tiene commits que tú no tienes. Hay
 
 Hasta ahora todos habéis trabajado directamente sobre `main`. En equipos reales eso es peligroso: un fallo tuyo rompe el trabajo de todos. La solución son las **ramas**.
 
-1. Asegúrate de estar al día: `git pull`
+1. Asegúrate de estar al día:
+   ```
+   git fetch
+   git merge origin/main
+   ```
 2. Crea **tu propia rama**:
    ```
    git checkout -b tunombre-grito
@@ -119,7 +117,8 @@ Hasta ahora todos habéis trabajado directamente sobre `main`. En equipos reales
 7. Vuelve a `main` y trae los cambios:
    ```
    git checkout main
-   git pull
+   git fetch
+   git merge origin/main
    python3 main.py
    ```
    Cuando todos hayáis hecho merge de vuestros PR, `main.py` mostrará el grito de guerra de cada luchador antes del combate.
@@ -144,5 +143,5 @@ Hasta ahora todos habéis trabajado directamente sobre `main`. En equipos reales
 - `Permission denied (publickey)`: tu clave SSH no está bien subida a GitHub, o estás clonando con `https://` en vez de `git@github.com:`.
 - `Repository not found` al clonar el repo de tu responsable: todavía no has aceptado su invitación.
 - `CONFLICT ... Automatic merge failed`: Git no sabe cuál de dos cambios en la misma línea elegir. Abre el archivo en VS Code, deja solo la versión buena (botones *Accept...*), y luego `git add`, `git commit`, `git push`. Si te agobias: `git merge --abort`.
-- `Need to specify how to reconcile divergent branches`: te falta `git config --global pull.rebase false`.
+- `Need to specify how to reconcile divergent branches`: has usado `git pull`. En esta práctica usamos `git fetch` y luego `git merge origin/main`.
 - `remote: Permission to ... denied`: estás intentando subir al repo de la organización en vez del de tu responsable. Revisa `git remote -v`.
