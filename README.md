@@ -4,6 +4,8 @@ Vais a trabajar en grupos de 3-4 personas sobre un mismo proyecto de Python: una
 Cada uno crea el suyo, y entre todos lo juntáis con Git. No hace falta saber programar: solo cambiar unos valores.
 Cada ronda enseña algo real del trabajo en equipo con Git.
 
+> Esta práctica también está en web, con botones de copiar y tus datos rellenados en los comandos: https://skillissu3.github.io/git-intro/ (pestaña «5. Ejercicios»).
+
 **Qué necesitas:** Git con tu clave SSH ya configurada (`ssh -T git@github.com` te saluda por tu usuario), Python 3 y VS Code.
 En Windows, todo desde la terminal de **WSL** y dentro de `~/` (nunca en `/mnt/c`).
 
