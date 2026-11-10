@@ -33,7 +33,7 @@ Un solo miembro del grupo hace de **responsable**. El resto espera al paso 5.
 
 **Resto del equipo:**
 
-5. Cuando hayáis aceptado la invitación, clonad **el repo del responsable** (no el de la organización):
+5. Cuando hayáis aceptado la invitación, clonad **el repo del responsable** (no el de la organización). Cambia `USUARIO_DEL_RESPONSABLE` por el usuario de GitHub **del responsable** (pídeselo: no es el tuyo):
    ```
    git clone git@github.com:USUARIO_DEL_RESPONSABLE/ejercicios-equipo.git
    cd ejercicios-equipo
