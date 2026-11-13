@@ -10,3 +10,4 @@
 NOMBRE = "Groudon oscuro 96%"   # cómo se llama tu luchador (puedes inventarte un apodo)
 VIDA = 30              # cuántos golpes aguanta (máximo 30)
 ATAQUE = 8             # lo fuerte que pega (máximo 8)
+GRITO = "¡Nadie me gana a piedra, papel o tijera!"
