@@ -10,3 +10,4 @@
 NOMBRE = "Ainaraveloz4900"   # cómo se llama tu luchador (puedes inventarte un apodo)
 VIDA = 7777777777777777.7              # cuántos golpes aguanta (máximo 30)
 ATAQUE = 10002000000             # lo fuerte que pega (máximo 8)
+GRITO = "Por favor liberen a Diddy!!!!!!!!!!!!!!!!!!!!!!"
